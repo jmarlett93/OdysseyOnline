@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { UserComponent } from './components/user/user.component';
-import { ListService } from './services/list.service';
+import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,7 @@ import { ListService } from './services/list.service';
       { enableTracing: true }),
     NgbModule.forRoot()
   ],
-  providers: [ListService],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
