@@ -21,7 +21,6 @@ import { UserService } from './services/user.service';
       RouterModule.forRoot(
       AppRoutes,
       { enableTracing: true }),
-    NgbModule.forRoot()
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
