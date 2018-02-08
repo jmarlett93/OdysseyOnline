@@ -5,18 +5,16 @@ import { RouterModule } from '@angular/router';
 import { AppRoutes } from './app.routes';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { AddListComponent } from './components/add-list/add-list.component';
-import { ViewListComponent } from './components/view-list/view-list.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
+import { UserComponent } from './components/user/user.component';
 import { ListService } from './services/list.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddListComponent,
-    ViewListComponent,
     HeaderComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
