@@ -1,34 +1,33 @@
 <div class="row">
     <div class="col-sm-6">
-    <div class="panel panel-primary">
-        <div class="panel-heading">
-           {{title}}
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                {{title}}
+            </div>
+            <div class="panel-body">
+                <p class="text-center">
+                    Enter a nickname and Gmail account to track your high scores
+                </p>
+            </div>
+            <form #signInForm="ngForm">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <div class="input-group">
+                            <span class="input-group-addon">User Name</span>
+                            <input [(ngModel)]="newUser.userName" name="userName" type="text" class="form-control" required>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="input-group">
+                            <span class="input-group-addon">Gmail Address</span>
+                            <input [(ngModel)]="newUser.email" name="email" type="email" class="form-control" required>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <button [disabled]="!signInForm.form.valid" type="submit" class="btn btn-primary" (click)="submitAuthCreds($event)">Login In</button>
+                    </li>
+                </ul>
+            </form>
         </div>
-        <div class="panel-body">
-         <p class="text-center">
-             Enter a nickname and email to track your high scores
-         </p>
-
-    
-            </div>
-                        <ul class="list-group">
-<li class="list-group-item">
-       <div class="input-group">
-                <span class="input-group-addon">
-                    Name
-                </span>
-                <input type="text" class="form-control">
-            </div>
-</li>
-<li class="list-group-item">
-        <div class="input-group">
-                <span class="input-group-addon">
-                    Email
-                </span>
-                <input type="text" class="form-control">
-            </div>
-</li>
-            </ul>
-    </div>
     </div>
 </div>
