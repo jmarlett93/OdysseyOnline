@@ -7,11 +7,10 @@ let conn = new DBAccess().getConnection();
 
 //Define BucketlistSchema with title, description and category
 let schema = new Schema({
-    title: { type: String,required: true},
-    description: String,
-    category: {type: String, required: true, enum: ['High', 'Medium', 'Low']}
+    userName: { type: String,required: true},
+    emailAddress: {type: String, required: true}
 });
 
-const List = conn.model('list', schema );
+const User = conn.model('user', schema );
 
-module.exports = List;
+module.exports = User;
