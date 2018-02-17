@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const passport = require("passport");
 const canary = require('./api/routes/canary.routes.js');
+const user = require('./api/routes/user.routes.js');
 const auth = require('./config/auth.js');
 cookieParser = require('cookie-parser'),
 cookieSession = require('cookie-session');
@@ -39,6 +40,7 @@ app.use(bodyParser.json());
 // );
 
 app.use('/canary', canary);
+app.use('/user', user);
 
 app.use(express.static(path.join(__dirname, 'public')));
 

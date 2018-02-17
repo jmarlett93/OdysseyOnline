@@ -9,6 +9,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { UserComponent } from './components/user/user.component';
 import { UserService } from './services/user.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { UserService } from './services/user.service';
   imports: [
     BrowserModule,
      FormsModule,
+     HttpClientModule,
       RouterModule.forRoot(
       AppRoutes,
       { enableTracing: true }),

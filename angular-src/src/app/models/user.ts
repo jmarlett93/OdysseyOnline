@@ -1,7 +1,7 @@
 export class User {
     constructor(
         userName: string,
-        email: string,
+        emailAddress: string,
         _id?: string,
     ) { }
 }

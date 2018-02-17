@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import {Http, Headers } from '@angular/http';
+import {HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class UserService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
 }
