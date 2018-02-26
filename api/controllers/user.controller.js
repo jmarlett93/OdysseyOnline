@@ -14,7 +14,7 @@ function login(userFormData) {
             if (userExists) {
                 return logInExistingUser(userFormData.emailAddress);
             } else {
-                return validateNewUserData(userFormData);
+                return validateAndSaveNewUserData(userFormData);
             }
         }).then(userResult => {
 
