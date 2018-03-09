@@ -4,7 +4,6 @@ const UserController = {
     login: login
 };
 
-
 // create and validate user if none exists,
 // or return logged in user
 function login(userFormData) {
@@ -39,7 +38,7 @@ function logInExistingUser(email) {
         { $set: { lastLoginDate: new Date().toUTCString() } }).exec();
 }
 
-function validateNewUser() {
+function validateAndSaveNewUserData() {
 
 }
 

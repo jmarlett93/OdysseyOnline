@@ -12,3 +12,5 @@ router.post('/login',
                 res.send({status: "error", result: error});
            });
   });
+
+  module.exports = router;
