@@ -8,8 +8,9 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  loginUser(userCreds){
-    let url = this.rootUrl + '/user/verifyuser';
+  loginUser(userCreds) {
+    const url = this.rootUrl + '/user/verifyuser';
     return this.http.post(url, userCreds);
   }
+
 }
