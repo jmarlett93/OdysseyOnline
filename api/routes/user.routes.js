@@ -6,10 +6,11 @@ router.post('/verifyuser',
     (req, res) => {
         UserController.login(req.body)
             .then(result => {
-                res.send({ status: "ok", result: result, message: "" });
+                res.status(200).send({ status: "ok", result: result, message: "" });
             })
             .catch(err => {
-                res.send({status: "error", result: error});
+                console.error(err);
+                res.status(500).send({status: "error", result: err});
            });
   });
 

@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { UserComponent } from './components/user/user.component';
+import { SignInComponent } from './components/signin/sign-in.component';
 import { UserService } from './services/user.service';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     HeaderComponent,
     WelcomeComponent,
-    UserComponent
+    UserComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,

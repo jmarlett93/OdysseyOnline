@@ -9,21 +9,8 @@ import { UserService } from '../../services/user.service';
 })
 export class WelcomeComponent implements OnInit {
   title = 'Welcome';
-  private newUser: User;
-
-  constructor(private userService: UserService) {
-    this.newUser = new User('', '');
-  }
 
   ngOnInit(): void {
-
-  }
-
-  submitAuthCreds(): void {
-    this.userService.loginUser(this.newUser)
-    .subscribe(res => {
-      console.log(res);
-    });
 
   }
 

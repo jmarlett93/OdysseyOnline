@@ -1,0 +1,19 @@
+<form #signInForm="ngForm">
+    <ul class="list-group">
+        <li class="list-group-item">
+            <div class="input-group">
+                <span class="input-group-addon">User Name</span>
+                <input [(ngModel)]="newUser.userName" name="userName" type="text" class="form-control" required>
+            </div>
+        </li>
+        <li class="list-group-item">
+            <div class="input-group">
+                <span class="input-group-addon">Gmail Address</span>
+                <input [(ngModel)]="newUser.emailAddress" name="email" type="email" class="form-control" required>
+            </div>
+        </li>
+        <li class="list-group-item">
+            <button [disabled]="!signInForm.form.valid" type="submit" class="btn btn-primary" (click)="submitAuthCreds($event)">Login</button>
+        </li>
+    </ul>
+</form>

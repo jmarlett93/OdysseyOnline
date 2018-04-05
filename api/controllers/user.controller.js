@@ -5,15 +5,7 @@ const User = require('../../dataAccess/models/user');
 const UserController = {
     login: login
 };
-
-// create and validate user if none exists,
-// or return logged in user
 function login(userFormData) {
-//check if user exists
-
-//if yes return user
-
-// if no add user and return 
 
     return checkIfUserExists(userFormData)
         .then(userExists => {
@@ -24,8 +16,8 @@ function login(userFormData) {
             }
         })
         .then(userResult => {
-                return "hi philo";
-        })
+                return (userResult);
+        });
 }
 
 function checkIfUserExists(userFormData) {
@@ -33,17 +25,19 @@ function checkIfUserExists(userFormData) {
 }
 
 function logInExistingUser(email) {
-    return User.findAndUpdate(
+    return User.findOneAndUpdate(
         { emailAddress: email },
         { $set: { lastLoginDate: new Date().toUTCString() } }).exec();
 }
 
 function createNewUser(userFormData) {
-
-}
-
-function validateNewUserData(userFormData) {
-    return new User(userFormData).validate();
+   const userToSave = new User(userFormData);
+   let validationResult = userToSave.validateSync();
+   if(validationResult && validationResult.errors.length > 0){
+       return "";
+   }else{
+    return userToSave.save();
+   }
 }
 
 module.exports = UserController;
