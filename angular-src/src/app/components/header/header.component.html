@@ -1,6 +1,10 @@
-<nav class="navbar navbar-primary">
+<nav class="navbar navbar-expand-sm">
 <a class="navbar-brand" href="">Odyssey App</a>
-    <ul class="nav navbar-nav">
+  <button type="button" class="navbar-toggler hidden-sm-up" (click)="isCollapsed = !isCollapsed" data-target="#navbarText" aria-controls="navbarText" [attr.aria-expanded]="!isCollapsed" >
+     &#9776;
+  </button>
+<div id="navbarText">
+    <ul class="navbar-nav">
       <li class="nav-item">
         <a class="nav-link" href="/welcome">Welcome</a>
       </li>
@@ -8,4 +12,5 @@
         <a class="nav-link" href="/user">User</a>
       </li>
     </ul>
+</div>
 </nav>
