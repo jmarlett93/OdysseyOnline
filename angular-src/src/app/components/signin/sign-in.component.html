@@ -15,5 +15,10 @@
         <li class="list-group-item">
             <button [disabled]="!signInForm.form.valid" type="submit" class="btn btn-primary" (click)="submitAuthCreds($event)">Login</button>
         </li>
+
+        <li class="list-group-item">
+            <a href='http://localhost:3000/auth/google/' type="submit" class="btn btn-primary" 
+            >Login with Google</a>
+        </li>
     </ul>
 </form>

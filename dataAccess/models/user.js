@@ -5,10 +5,17 @@ let DBAccess = require('../dbaccess');
 let conn = new DBAccess().getConnection();
 
 let schema = new Schema({
-    userName: { type: String, required: true, index: { unique: true } },
-    emailAddress: { type: String, required: true, index: { unique: true } },
+    userName: { type: String, index: { unique: true } },
+    emailAddress: { type: String, index: { unique: true } },
+    google: {
+        id: String,
+        token: String,
+        email: String,
+    },
     lastLoginDate: {type: Date, required: true, default: new Date().toUTCString()}
 });
+
+
 
 const User = conn.model('user', schema);
 
