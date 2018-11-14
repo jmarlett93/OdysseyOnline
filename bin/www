@@ -1,7 +1,9 @@
 /**
  * Module dependencies.
  */
+require('dotenv').config();
 
+console.log(process.env);
 var app = require('../app');
 
 var debug = require('debug')('odysseyonline:server');
