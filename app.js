@@ -18,8 +18,12 @@ const User = require('./dataAccess/models/user');
 let router = express.Router();
 const port = 3000;
 const app = express();
+const corsOptions = {
+    origin: 'http://localhost:3000',
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+  }
 
-app.use(cors());
+  app.use(cors(corsOptions))
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
@@ -39,6 +43,7 @@ app.get('/', (req, res) => {
  });
 });
 
+app.options('/auth/google', cors(corsOptions));
 app.get('/auth/google', passport.authenticate('google', {
  scope: ['https://www.googleapis.com/auth/userinfo.profile']
 }));
@@ -49,6 +54,7 @@ app.get('/auth/google/callback',
  }),
  (req, res) => {
     req.session.token = req.user.token;
+    console.log('we made it to repsonse call back');
     res.redirect('/');
 }
 );

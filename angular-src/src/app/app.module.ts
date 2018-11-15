@@ -8,8 +8,9 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { UserComponent } from './components/user/user.component';
-import { SignInComponent }  from './components/signin/sign-in.component';
+import { SignInComponent } from './components/signin/sign-in.component';
 import { UserService } from './services/user.service';
+import { GoogleOauthService } from './services/google-oauth.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { UserService } from './services/user.service';
       { enableTracing: true }),
       FormsModule
   ],
-  providers: [UserService],
+  providers: [UserService, GoogleOauthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
