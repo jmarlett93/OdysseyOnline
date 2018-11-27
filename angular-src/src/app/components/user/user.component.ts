@@ -30,4 +30,11 @@ export class UserComponent {
        console.log(data);
      });
   }
+
+  callLogout() {
+    this.googleOauthService.logOut()
+      .subscribe(data => {
+        console.log( data );
+      });
+  }
 }

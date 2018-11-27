@@ -4,3 +4,4 @@ typings/
 *.log
 .idea/
 .env
+public/

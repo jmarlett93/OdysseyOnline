@@ -11,6 +11,7 @@ let schema = new Schema({
         id: String,
         token: String,
         email: String,
+        name: String
     },
     lastLoginDate: {type: Date, required: true, default: new Date().toUTCString()}
 });

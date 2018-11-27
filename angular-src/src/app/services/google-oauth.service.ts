@@ -3,7 +3,7 @@ import {HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class GoogleOauthService {
-    private rootUrl = 'http://localhost:3000';
+    private rootUrl = 'http://localhost:3000/api';
 
     constructor(private http: HttpClient) { }
 
@@ -12,6 +12,14 @@ export class GoogleOauthService {
         .append('Content-Type', 'application/json');
         const options = { headers: headers };
       const url = this.rootUrl + '/auth/google';
+      return this.http.get(url, options);
+    }
+
+    logOut() {
+        const headers = new HttpHeaders()
+        .append('Content-Type', 'application/json');
+        const options = { headers: headers };
+        const url = this.rootUrl + '/logout';
       return this.http.get(url, options);
     }
 }
